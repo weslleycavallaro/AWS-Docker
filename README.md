@@ -82,19 +82,76 @@ Este projeto utiliza a **Cloud AWS** com **WordPress** para provisionar uma pág
 
 **Grupo da EC2**
 
-![SG-EC2](img/19.sg-ec2.png)
+Entrada:
+| Tipo  | Porta | Origem                    |
+| ----- | ----- | ------------------------- |
+| HTTP  | 80    | **SG-LB-PROJETO-DOCKER**  |
+| NFS   | 2049  | **SG-EFS-PROJETO-DOCKER** |
+| MYSQL | 3306  | **SG-RDS-PROJETO-DOCKER** |
+
+
+![SG-EC2](img/sg_ec2_entrada.png)
+
+Saida:
+| Tipo  | Porta | Destino                   |
+| ----- | ----- | ------------------------- |
+| MYSQL | 3306  | **SG-RDS-PROJETO-DOCKER** |
+| NFS   | 2049  | **SG-EFS-PROJETO-DOCKER** |
+
+
+![SG-EC2](img/sg_ec2_saida.png)
 
 **Grupo do EFS**
 
-![SG-EFS](img/18-sg-efs.png)
+Entrada:
+| Tipo | Porta | Origem                    |
+| ---- | ----- | ------------------------- |
+| NFS  | 2049  | **SG-EC2-PROJETO-DOCKER** |
+
+
+![SG-EFS](img/sg_efs_entrada.png)
+
+
+Saida:
+| Tipo | Porta | Destino     |
+| ---- | ----- | ----------- |
+| All  | All   | `0.0.0.0/0` |
+
+![SG-EFS](img/sg_efs_saida.png)
+
 
 **Grupo do RDS**
 
-![SG-RDS](img/20.sg-rds.png)
+Entrada:
+| Tipo  | Porta | Origem                    |
+| ----- | ----- | ------------------------- |
+| MYSQL | 3306  | **SG-EC2-PROJETO-DOCKER** |
+
+
+![SG-RDS](img/sg_rds_entrada.png)
+
+Saida:
+| Tipo | Porta | Destino     |
+| ---- | ----- | ----------- |
+| All  | All   | `0.0.0.0/0` |
+
+
+![SG-RDS](img/sg_rds_saida.png)
 
 **Grupo do Load Balancer**
 
-![SG-LB](img/20.sg-rds.png)
+Regras de Entrada:
+| Tipo | Porta | Origem      |
+| ---- | ----- | ----------- |
+| HTTP | 80    | `0.0.0.0/0` |
+
+![SG-LB](img/sg-alb.png)
+
+Regras de Saida:
+| Tipo | Porta | Destino     |
+| ---- | ----- | ----------- |
+| All  | All   | `0.0.0.0/0` |
+
 
 ---
 
