@@ -1,7 +1,7 @@
 # 🚀 Container Docker com WordPress na AWS
 
 <div style="display: flex; justify-content: space-between; width: 100%;">
-  <img src="img/aws.png" width="100"/>
+  ![aws](https://github.com/user-attachments/assets/c7a1758f-ffa4-41f9-b070-329387b91fe8)
   <img src="img/docker.png" width="100"/>
   <img src="img/linux.png" width="100"/>
   <img src="img/wordpress.png" width="100"/>
