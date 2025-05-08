@@ -33,7 +33,7 @@ Este projeto utiliza a **Cloud AWS** com **WordPress** para provisionar uma pág
   - Criando o **Launch Template**
   - Configurando o **Auto Scaling**
 
-## ✅ ETAPA 4: Testes
+## 🔍 ETAPA 4: Testes
 - **Objetivo:** Acessar o **WordPress** via **Load Balancer**
 - **Passos principais:**
    - Acessar o projeto
