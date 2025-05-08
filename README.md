@@ -21,13 +21,13 @@ Este projeto utiliza a **Cloud AWS** com **WordPress** para provisionar uma pág
   - Configurando o **RDS**
   - Configurando o **EFS**
 
-## 🌐 ETAPA 2: Balanceamento de Carga 
+## ⚖️ ETAPA 2: Balanceamento de Carga 
 - **Objetivo:** Configurar o acesso através do **Load Balancer**
 - **Passos principais:**
   - Configurando o **Target Group**
   - Criando o **Load Balancer**
 
-## 👨‍💻 ETAPA 3: Políticas de Escalonamento
+## 📈 ETAPA 3: Políticas de Escalonamento
 - **Objetivo:** Configurar o escalonamento através do **Auto Scaling Group**
 - **Passos principais:**
   - Criando o **Launch Template**
